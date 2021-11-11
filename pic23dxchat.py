@@ -44,7 +44,7 @@ for ix in range(width):
             "p": [ x, y, 0.0],
             "r": [0.0, 0.0, 0.0],
             "s": [ args.element_size, args.element_size, 0.1 ],
-            "c": [p/256.0 for p in pixel[0:3]],
+            "c": [p/255.0 for p in pixel[0:3]],
             "m": "unlit"
         }
         world["objects"][0]["objects"].append(new_box)
