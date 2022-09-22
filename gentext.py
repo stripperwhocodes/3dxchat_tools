@@ -19,6 +19,7 @@ def place_group(x, y, z, group, y_anchor, z_anchor):
 
 parser = argparse.ArgumentParser(description = "generate world file with specified text")
 parser.add_argument("text", type=str, help="text to generate")
+parser.add_argument("-o", type=str, default="", help="output file")
 args = parser.parse_args()
 font_filename = "soda_font_curated.world"
 font_y_anchor = 25.3633
@@ -62,4 +63,8 @@ for l in args.text:
         letter = place_group(x_pos, 2, 0, font_data[index], font_y_anchor, font_z_anchor)
         world["objects"].append(letter)
     x_pos+=font_letter_width
-print(world)
+if not args.o:
+    print(world)
+else:
+    with open(args.o, 'w') as f:
+        f.write(json.dumps(world, indent=None))
