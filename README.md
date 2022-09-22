@@ -13,7 +13,7 @@ using the tool and then merge into your world. For now only Soda font is support
 Other fonts will be added later. Use it like this:
 
 ```
-gentext.py "some cool text" > my_world.world
+gentext.py -o my_world.world "some cool text"
 ```
 
 See `gentext.py --help` for options
@@ -30,7 +30,7 @@ Use it like this:
 
 
 ```
-moveworld.py -x <offset> -y <offset> -z <offset> my_world.world > my_new_world.world
+moveworld.py -o my_moved_world.world -x <offset> -y <offset> -z <offset> my_world.world
 ```
 
 See `moveworld.py --help` for options.
@@ -43,7 +43,7 @@ tool (for windows) available but when I add more options this will become an alt
 Use it like this:
 
 ```
-pic23dxchat.py my_sexy_image.png > my_sexy_image.world
+pic23dxchat.py -o my_world.world my_sexy_image.png
 ```
 
 See `pic23dxchat.py --help` for options.
