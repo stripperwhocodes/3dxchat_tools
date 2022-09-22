@@ -13,7 +13,7 @@ using the tool and then merge into your world. For now only Soda font is support
 Other fonts will be added later. Use it like this:
 
 ```
-gentext.py "come cool text" > my_world.world
+gentext.py "some cool text" > my_world.world
 ```
 
 See `gentext.py --help` for options
