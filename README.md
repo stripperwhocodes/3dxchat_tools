@@ -18,6 +18,8 @@ gentext.py "some cool text" > my_world.world
 
 See `gentext.py --help` for options
 
+## World mover
+
 Simple tool to move (translate) the world along x, y, z axes. It comes handy if you
 have a downloaded item to merge into your world but the distance between the
 item's location and where you want it is large. You can move one world by desired
@@ -26,7 +28,6 @@ keeps resetting on you. If you are tired of constantly having to set the sea lev
 before opening the room, just move the world by the necessary y-offset.
 Use it like this:
 
-## World mover
 
 ```
 moveworld.py -x <offset> -y <offset> -z <offset> my_world.world > my_new_world.world
