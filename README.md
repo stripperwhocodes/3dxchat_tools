@@ -29,4 +29,4 @@ Simple tool to move (translate) the world along x, y, z axes. Use it like this:
 moveworld.py -x <offset> -y <offset> -z <offset> my_world.world > my_new_world.world
 ```
 
-See `moveworld.py -- help` for option.
+See `moveworld.py --help` for options.
