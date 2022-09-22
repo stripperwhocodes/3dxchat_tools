@@ -26,6 +26,8 @@ keeps resetting on you. If you are tired of constantly having to set the sea lev
 before opening the room, just move the world by the necessary y-offset.
 Use it like this:
 
+## World mover
+
 ```
 moveworld.py -x <offset> -y <offset> -z <offset> my_world.world > my_new_world.world
 ```
