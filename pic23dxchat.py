@@ -8,6 +8,7 @@ parser = argparse.ArgumentParser(description = 'convert image to 3dxchat world')
 parser.add_argument('filename', type=str, help='picture file name')
 parser.add_argument('--resize', '-r', type=float, default=1.0, help='resize factor')
 parser.add_argument('--element_size', '-e', type=float, default=0.02, help='3dx pixel-element size')
+parser.add_argument('--output_file', '-o', type=str, default='', help='output file')
 args = parser.parse_args()
 
 image = I.open(args.filename)
@@ -50,4 +51,9 @@ for ix in range(width):
         world["objects"][0]["objects"].append(new_box)
         y -= args.element_size
     x += args.element_size
-print(json.dumps(world))
+
+if not args.output_file:
+    print(world)
+else:
+    with open(args.output_file, 'w') as f:
+        f.write(json.dumps(world, indent=None))
