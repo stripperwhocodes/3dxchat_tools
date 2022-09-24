@@ -6,7 +6,7 @@ import argparse
 parser = argparse.ArgumentParser(description = 'move the world by a specified offset')
 parser.add_argument('filename', type=str, help='world file name')
 parser.add_argument('-x', type=float, default=0.0, help='x offset')
-parser.add_argument('-y', type=float, default=0.0, help='z offset')
+parser.add_argument('-y', type=float, default=0.0, help='y offset')
 parser.add_argument('-z', type=float, default=0.0, help='z offset')
 parser.add_argument('-o', type=str, default='', help='output file')
 args = parser.parse_args()
