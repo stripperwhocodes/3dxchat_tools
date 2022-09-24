@@ -41,10 +41,19 @@ This tool is useful to pick the color of an object. Open the world editor and se
 the object of interest and note its approximate coordinates. Then run the tool and give
 it the coordinate and the search radius. The search radius depends on the accuracy of
 your coordinates. For example, if you enter only two decimal places, then your
-search radius should be at least 0.01. Run the tool like this:
+search radius should be at least 0.01. Use it like this:
 
 ```
- getcolors.py -x <x_pos> -y <y_pos> -z <z_pos> -r <radius> my_world.world
+getcolors.py -x <x_pos> -y <y_pos> -z <z_pos> -r <radius> my_world.world
+```
+
+## Material picker
+
+Similar too to color picker, but reports materials for all objects in the vicinity
+of specified coordinates. Use it like this:
+
+```
+getmaterials.py -x <x_pos> -y <y_pos> -z <z_pos> -r <radius> my_world.world
 ```
 
 ## Picture to world converter
