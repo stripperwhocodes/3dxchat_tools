@@ -35,6 +35,18 @@ moveworld.py -o my_moved_world.world -x <offset> -y <offset> -z <offset> my_worl
 
 See `moveworld.py --help` for options.
 
+## Color picker
+
+This tool is useful to pick the color of an object. Open the world editor and select
+the object of interest and note its approximate coordinates. Then run the tool and give
+it the coordinate and the search radius. The search radius depends on the accuracy of
+your coordinates. For example, if you enter only two decimal places, then your
+search radius should be at least 0.01. Run the tool like this:
+
+```
+ getcolors.py -x <x_pos> -y <y_pos> -z <z_pos> -r <radius> my_world.world
+```
+
 ## Picture to world converter
 
 Simple tool to convert the picture to 3dxchat world. This is still work in progress
