@@ -18,6 +18,18 @@ gentext.py -o my_world.world "some cool text"
 
 See `gentext.py --help` for options
 
+## QR Code generator
+
+This tool generates a QR code image from any text or URL. Each element of the QR
+code will be a single 3DX world box, so the file will be very small and efficient
+and easy to scale and move around. Use it like this:
+
+```
+qr2world.py -o my_world.world "http://3dxchat.com"
+```
+
+See `qr2world.py --help` for options
+
 ## World mover
 
 Simple tool to move (translate) the world along x, y, z axes. It comes handy if you
