@@ -2,7 +2,12 @@
 
 All tools are meant to run from command line. You need Python. If you are on Linux or Mac,
 Python should be already installed. If you are on Windows, you can either install Python
-for Windows or enable WSL (Windows Subsystem for Linux).
+for Windows or enable WSL (Windows Subsystem for Linux). Once your Python is working, install
+the required packages:
+
+```
+pip install -r requirements.txt
+```
 
 # Available tools
 
