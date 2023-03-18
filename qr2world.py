@@ -2,13 +2,19 @@
 import qrcode
 import qrcode.image.svg
 import io
+import argparse
+import json
 
 import xml.etree.ElementTree as ET
 
-data = "https://docs.python.org/"
+parser = argparse.ArgumentParser(description = 'generate the world file with QR code')
+parser.add_argument('url', type=str, help='url to put in the QR code')
+parser.add_argument('--resize', '-r', type=float, default=1.0, help='resize factor')
+parser.add_argument('--output_file', '-o', type=str, default='', help='output file')
+args = parser.parse_args()
 
 factory = qrcode.image.svg.SvgFragmentImage
-img = qrcode.make(data, image_factory = factory)
+img = qrcode.make(args.url, image_factory = factory)
 
 # save svg file to tmp, and load it back as svg
 img.save('tmp.svg')
@@ -34,12 +40,13 @@ world = {
         }
     ]
 }
+
 for child in root:
     if child.tag.endswith('rect'):
-        x = float(child.attrib['x'].replace('mm', ''))
-        y = float(child.attrib['y'].replace('mm', ''))
-        width = float(child.attrib['width'].replace('mm', ''))
-        height = float(child.attrib['height'].replace('mm', ''))
+        x = float(child.attrib['x'].replace('mm', '')) * args.resize
+        y = float(child.attrib['y'].replace('mm', '')) * args.resize
+        width = float(child.attrib['width'].replace('mm', '')) * args.resize
+        height = float(child.attrib['height'].replace('mm', '')) * args.resize
         new_box = {
             "n": "Box",
             "p": [ x, y, 0.0],
@@ -49,4 +56,9 @@ for child in root:
             "m": "unlit"
         }
         world["objects"][0]["objects"].append(new_box)
-print(world)
+
+if not args.output_file:
+    print(world)
+else:
+    with open(args.output_file, 'w') as f:
+        f.write(json.dumps(world, indent=None))
