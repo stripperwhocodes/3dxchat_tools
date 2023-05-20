@@ -18,10 +18,12 @@ using the tool and then merge into your world. For now only Soda font is support
 Other fonts will be added later. Use it like this:
 
 ```
-gentext.py -o my_world.world "some cool text"
+gentext.py -f soda -o my_world.world "some cool text"
 ```
 
 See `gentext.py --help` for options
+
+Supported fonts are soda and outline for now.
 
 ## QR Code generator
 
