@@ -33,6 +33,13 @@ fonts = {
             [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ] + \
             list(string.ascii_lowercase) + \
             [ ".", ",", "'", '"', "`", "!", "?", ":", ";", "/", "-", "[", "]" ]
+    },
+    "outline": {
+        "filename" : "outline_font_curated.world",
+        "y_anchor" : 10.61,
+        "z_anchor" : 54.41,
+        "letter_width" : 2.8,
+        "index" : list(string.ascii_uppercase) + list(string.ascii_lowercase)
     }
 }
 
